@@ -1,0 +1,72 @@
+%section.span8
+  %article.well
+    %h2
+      %a{href: "/" + article.name}&= article.title
+    = markdownEncode(article.markdown)
+    %hr
+    #disqus_thread.body
+    :script
+      var disqus_url = "http://blog.jpardanaud.com/#{article.name}";
+    %script(src="http://disqus.com/forums/jpardanaud-blog/embed.js" type="text/javascript" async="async")
+    %a.view-thread(href="http://disqus.com/forums/jpardanaud-blog/?url=ref")
+      View the discussion thread.
+    %a.dsq-brlink(href="http://disqus.com")
+      blog comments powered by
+      %span.logo-disqus
+        Disqus
+
+%section#sidebar.span4
+  .well
+    %h3
+      À propos de l'article
+    %a.twitter-share-button{href:"https://twitter.com/share"}
+      Tweet
+    %script
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    
+    :if article.date
+      %dl{title: article.date}
+        %dt
+          Date de publication :
+        %dd
+          &= formatDate(article.date, "%A, %B %e, %Y")
+
+    :if article.lastUpdated
+      %dl{title: article.lastUpdated}
+        %dt
+          Dernière mise à jour :
+        %dd
+          &= formatDate(article.lastUpdated, "%A, %B %e, %Y")
+
+    :if article.dependencies
+      %dl
+        %dt
+          Dependency Versions:
+        %dd
+          %ul
+            :each dependency in article.dependencies
+              %li
+                %a{ href: "http://github.com/creationix/haml-js/tree/8ea2df3a90ff488ed253d5872e0f4a387f393e5d" }
+                  haml-js v0.2.2
+
+    :if article.uniqueSnippets
+      %ul.nav.nav-list
+        %li.nav-header
+          Codes associés :
+        :each base, snippet in article.uniqueSnippets
+          %li
+            %a{ href: snippet.filename}
+              &= base
+
+  :if article.related && article.related.length > 0
+    .well
+      %ul.nav.nav-list
+        %li.nav-header
+          Derniers articles :
+        :each related in article.related
+          %li
+            %a{href: "/" + related.name}&=related.title
+
+  .about.well
+    %h3 À propos de ce blog
+    = markdownEncode(description)

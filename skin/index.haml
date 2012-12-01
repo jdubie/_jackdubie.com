@@ -1,0 +1,23 @@
+%section#articles.span8
+  .well
+    :each article in articles.slice(0,10)
+      %article
+        %h2
+          %a{href: "/" + article.name}&= article.title
+          %small.pull-right&= formatDate(article.date, "%d/%m/%Y")
+        = intro(article.markdown)
+        .buttons
+          %a.btn.btn-primary{href: "/" + article.name} Read more...
+          %a.btn.btn-mini.pull-right{href: "/" + article.name + "#disqus_thread"} Comments
+      %hr
+
+%section#sidebar.span4
+  .about.well
+    = markdownEncode(description)
+  .well
+    %ul.nav.nav-list
+      %li.nav-header
+        Latest articles:
+      :each article in articles.slice(0,20)
+        %li
+          %a{href: "/" + article.name}&=article.title

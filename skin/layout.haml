@@ -1,0 +1,47 @@
+!!! 5
+%html
+  %head
+    %meta(charset="utf-8")
+    %title #{(title ? title + " - " : "")}Jack Dubie
+    %link(href="/css/bootstrap.min.css" rel="stylesheet")
+    %link(href="/css/style.css" rel="stylesheet")
+    %link(href="/css/prettify.css" rel="stylesheet")
+    %link(rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed.xml")
+    %script(src="/js/prettify.js")
+  %body
+    .container-fluid
+      .row-fluid
+        %header.span12.well.pagination-centered
+          %h1
+            %a{href: "/"} Jack Dubie
+
+      .row-fluid
+        = content
+      
+      .row-fluid
+        .span12
+          %hr
+          %footer
+            %p
+              %a{href: "https://github.com/creationix/wheat"} Wheat
+               (by 
+              %a{href: "http://creationix.com/"} Tim Caswell
+              ) with Node.js #{process.version}.
+            %p
+              Design by 
+              %a{href: "http://jpardanaud.com/"} Johann Pardanaud
+               with the help of 
+              %a{href: "http://twitter.github.com/bootstrap/"} Twitter Bootstrap
+              .
+    %script
+      var pres=document.getElementsByTagName("pre");for(var i=0,pre;pre=pres[i++];)pre.className="prettyprint";prettyPrint()
+    %script
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-35090779-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
