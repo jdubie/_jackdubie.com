@@ -3,7 +3,7 @@ Author: Tim Caswell
 Date: Tue Feb 02 2010 10:16:51 GMT-0600 (CST)
 Node: v0.1.102
 
-**How To Node** is a blog featuring projects and tutorials relating to the Node.js project.
+**How To prat Node** is a blog featuring projects and tutorials relating to the Node.js project.
 
 This article will describe how the blog works.  Teach a few node concepts and describe how to contribute new articles for others to enjoy.
 
