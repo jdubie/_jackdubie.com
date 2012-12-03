@@ -3,6 +3,10 @@ Author: Jack Dubie
 Date: Sun Dec 02 2012 20:37:49 GMT-0800 (PST)
 Node: v0.8.15
 
+**How To prat Node** is a blog featuring projects and tutorials relating to the Node.js project.
+
+This article will describe how the blog works.  Teach a few node concepts and describe how to contribute new articles for others to enjoy.
+
 [Sam King](http://samjk.blogspot.com/) teaches an awesome student initiated
 course in the CS department named CS1U: Practical Unix. The class is great for
 people that are just learning unix as well as people that have been developing
