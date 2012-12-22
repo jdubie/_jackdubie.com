@@ -2,5 +2,6 @@ var express = require('express'),
     wheat = require('wheat');
 
 var app = express();
-app.use(wheat())
+app.use(express.static(__dirname+'/public'));
+app.use(wheat());
 app.listen(8000);
